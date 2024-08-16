@@ -4,6 +4,7 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import React from 'react'
 import { Postdetail } from './screens/postdetail/Postdetail';
 import { Createpost } from './screens/create/Createpost.js';
+import { Editpost } from './screens/edit/Editpost.js'
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/" element={<Home/>}/>
             <Route path="/create" element={<Createpost/>}/>
             <Route path="/post/:id" element={<Postdetail/>}/>
+            <Route path="/Edit/:id" element={<Editpost/>}/>
           </Routes>
           </div>
      </BrowserRouter>

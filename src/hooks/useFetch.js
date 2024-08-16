@@ -16,6 +16,15 @@ export const useFetch = (url,method="GET") =>{
           }
         })
       }
+      else if(method === "PATCH"){
+        setOptions({
+          method:"PATCH",
+          body:JSON.stringify(data),
+          headers:{
+            "Content-type":"application/json; charset=UTF-8"
+          }
+        })
+      }
     }
 
     useEffect(() => {
@@ -38,7 +47,7 @@ export const useFetch = (url,method="GET") =>{
         if(method === "GET"){
           fetchPosts()
         }
-        else if(method === "POST" && options){
+        else if((method === "POST" || method ==="PATCH") && options){
           fetchPosts(options)
         }
         

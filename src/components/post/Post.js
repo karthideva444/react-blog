@@ -3,8 +3,8 @@ import './Post.css'
 import { useNavigate } from 'react-router-dom'
 
 export default function Post({post}) {
-
-    const navigate = useNavigate()
+    
+    const navigate = useNavigate()    
     
     const handlepost = ()=>{
         navigate(`/post/${post.id}`,{state:post})

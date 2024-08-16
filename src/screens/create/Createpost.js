@@ -23,7 +23,6 @@ export const Createpost = () => {
       return
     }
     setValidationError('')
-    console.log({title,content,userId:1}); 
     optionsData({title,content,userId:1})
   }
 
@@ -60,7 +59,7 @@ export const Createpost = () => {
           </div>
         }
         <div className='float-end'>
-        <button type='submit' className='btn btn-primary'>Submit</button>
+        <button type='submit' className='btn btn-primary'>Create</button>
         </div>
       </form>
     </div>
