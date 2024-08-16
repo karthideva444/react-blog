@@ -1,16 +1,28 @@
-import React from 'react'
+import React ,{useEffect}from 'react'
 import './Postdetail.css'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useFetch } from '../../hooks/useFetch'
 
 export const Postdetail = () => {
   const location = useLocation()
   const navigate = useNavigate()
   
   const { state :post} = location
+
+  const {data,error,optionsData} = useFetch(`https://jsonplaceholder.typicode.com/posts/${post.id}`,"DELETE")
   
   const handleEdit = ()=>{
     navigate(`/Edit/${post.id}`,{state:post})
   }
+  const handleDelete = ()=>{
+    optionsData()
+  }
+  useEffect(()=>{
+    if(data.length !== 0 ){
+      const timer = setTimeout(()=>navigate("/"),1000)
+      return ()=>clearTimeout(timer)
+    }
+  },[data,navigate])
 
   return (
     <div className='container'>
@@ -19,8 +31,17 @@ export const Postdetail = () => {
         <p className="lead">
           {post.body}
         </p>
+        {
+          data.length !== 0 && <div className='alert alert-success' role="alert">
+          Post Deleted successfully !!!
+        </div>
+        }
+        {error && <div className='alert alert-danger' role="alert">
+            {error}
+          </div>
+        }
         <div className="float-end">
-          <button type='submit' className='btn btn-primary'>Delete</button>
+          <button type='submit' className='btn btn-primary' onClick={handleDelete}>Delete</button>
           <div className="float-end"></div>        
           <button type='submit' className='btn btn-primary'onClick={handleEdit}>Edit</button>
         </div>        

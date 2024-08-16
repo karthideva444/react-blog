@@ -25,6 +25,11 @@ export const useFetch = (url,method="GET") =>{
           }
         })
       }
+      else if(method === "DELETE"){
+        setOptions({
+          method:"DELETE",
+        })
+      }
     }
 
     useEffect(() => {
@@ -47,7 +52,7 @@ export const useFetch = (url,method="GET") =>{
         if(method === "GET"){
           fetchPosts()
         }
-        else if((method === "POST" || method ==="PATCH") && options){
+        else if((method === "POST" || method ==="PATCH" || method ==="DELETE") && options){
           fetchPosts(options)
         }
         
