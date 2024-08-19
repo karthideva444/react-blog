@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 import './Editpost.css'
 import { useFetch } from '../../hooks/useFetch'
 import { useLocation,useNavigate } from 'react-router-dom'
+import { Appsubmitbutton } from '../../appsubmitbutton/Appsubmitbutton'
 
 export const Editpost = () => {
   const [title,setTitle] = useState('')
@@ -48,7 +49,6 @@ export const Editpost = () => {
     setModifiedField({...modifiedfield,body:e.target.value})
 
   }
-
   return (
     <div className='outercontainer'>
       <form onSubmit={handlesubmit}>  
@@ -77,7 +77,7 @@ export const Editpost = () => {
           </div>
         }
         <div className='float-end'>
-        <button type='submit' className='btn btn-primary'>Edit</button>
+        <Appsubmitbutton title="Update"></Appsubmitbutton>
         </div>
       </form>
     </div>

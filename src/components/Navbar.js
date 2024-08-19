@@ -1,10 +1,12 @@
 import React from 'react'
 import './Navbar.css'
 import {Link} from 'react-router-dom'
+import { useThemeContext } from '../hooks/useThemeContext'
 
 export const Navbar = () => {
+  const {theme} = useThemeContext()
   return (
-    <header>
+    <header className={`${theme}header`}>
       <div className='container'> 
         <h1>Blog</h1>
         <nav>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Createpost.css'
 import { useFetch } from '../../hooks/useFetch'
 import { useNavigate } from 'react-router-dom'
+import { Appsubmitbutton } from '../../appsubmitbutton/Appsubmitbutton'
 
 export const Createpost = () => {
   const [title,setTitle] = useState('')
@@ -59,7 +60,7 @@ export const Createpost = () => {
           </div>
         }
         <div className='float-end'>
-        <button type='submit' className='btn btn-primary'>Create</button>
+        <Appsubmitbutton title="Create" />
         </div>
       </form>
     </div>

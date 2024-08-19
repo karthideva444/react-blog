@@ -2,3 +2,10 @@
     margin: 10px !important;
     background-color: antiquewhite;
 }
+
+.lightcard {
+    background-color: rgb(238, 220, 195);
+}
+.darkcard {
+    background-color: rgb(88, 70, 252);
+}

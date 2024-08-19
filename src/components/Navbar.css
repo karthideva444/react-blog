@@ -1,5 +1,8 @@
-header {
-    background-color: antiquewhite;
+.lightheader {
+    background-color: rgb(238, 220, 195);
+}
+.darkheader {
+    background-color: rgb(88, 70, 252);
 }
 header .container{
     max-width: 1200px;

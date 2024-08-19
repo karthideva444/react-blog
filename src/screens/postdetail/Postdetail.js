@@ -2,6 +2,7 @@ import React ,{useEffect}from 'react'
 import './Postdetail.css'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useFetch } from '../../hooks/useFetch'
+import { Appsubmitbutton } from '../../appsubmitbutton/Appsubmitbutton'
 
 export const Postdetail = () => {
   const location = useLocation()
@@ -41,9 +42,8 @@ export const Postdetail = () => {
           </div>
         }
         <div className="float-end">
-          <button type='submit' className='btn btn-primary' onClick={handleDelete}>Delete</button>
-          <div className="float-end"></div>        
-          <button type='submit' className='btn btn-primary'onClick={handleEdit}>Edit</button>
+          <Appsubmitbutton title="Delete" onClick={handleDelete}></Appsubmitbutton>
+          <Appsubmitbutton title="Edit" onClick={handleEdit}></Appsubmitbutton>
         </div>        
       </div>
       </div>
